@@ -1,3 +1,6 @@
+div#menuToggle{
+    width: 100px;
+}
 #menuToggle {
     display: block;
     position: relative;
