@@ -1,11 +1,41 @@
 @media(max-width: 320px) {
-    #menu,
+    /*#menu,
     #menuToggle li
     {
         background-color: cornsilk;
         width: 30%;
         border-radius: 30px;
-        font-size: 18px;
+        font-size: 30px;
+    }
+     */
+    .header-wrapper{
+        font-size: 20px;
+    }
+    .header-title{
+        margin: 5px;
+    }
+    .block,
+    .tasks,
+    .days{
+        width: 20px;
+        font-size: 15px;
+        flex-wrap: wrap;
     }
 
+}
+@media(max-width: 420px) {
+    .header-wrapper{
+        font-size: 20px;
+    }
+    .header-title{
+        margin: 5px;
+    }
+    .block,
+    .tasks,
+    .days{
+        width: 320px;
+        /*font-size: 20px;*/
+        flex-wrap: wrap;
+
+    }
 }
