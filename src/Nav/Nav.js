@@ -11,7 +11,7 @@ const Nav = () => {
         <div className="menu">
             <nav role="navigation">
                 <div className="menuToggle">
-                    <button onClick={() => setIsOpened(!isOpened)} className="nav__button">
+                    <button onClick={() => {return setIsOpened(!isOpened);}} className="nav__button">
                         <input type="checkbox" />
                         <span></span>
                         <span></span>
