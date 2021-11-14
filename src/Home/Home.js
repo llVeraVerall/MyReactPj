@@ -1,16 +1,16 @@
-import React from "react";
-import './Home.css'
-import './media__home.css'
+import React from 'react';
+import './Home.css';
+import './media__home.css';
 
 const Home = () => {
     return(
-    <div>
-       <div className='title'>
+        <div>
+            <div className='title'>
            Home
-       </div>
+            </div>
             <div className='block'>
                 <div className='days'><h4>Days</h4>
-                <div className='icon'>img</div>
+                    <div className='icon'>img</div>
                     <div className='limit'>limit</div>
                     <div className='count'>25</div>
                 </div>
@@ -20,8 +20,8 @@ const Home = () => {
                     <div className='count'>70</div>
                 </div>
             </div>
-    </div>
-    )
-}
+        </div>
+    );
+};
 
-export default Home
+export default Home;
