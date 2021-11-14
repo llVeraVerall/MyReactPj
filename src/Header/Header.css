@@ -1,0 +1,23 @@
+
+.header-wrapper{
+    width: 100%;
+    height: 50px;
+    background-color: slategray;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-title{
+    color: cornsilk;
+    margin-left: 100px ;
+}
+
+.logout{
+    text-decoration: none;
+    color: cornsilk;
+    margin: 25px;
+}
+
+

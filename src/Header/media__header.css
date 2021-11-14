@@ -1,0 +1,19 @@
+@media(max-width: 320px) {
+    .header-wrapper {
+        font-size: 20px;
+    }
+
+    .header-title {
+        margin: 5px;
+    }
+}
+
+@media(max-width: 420px) {
+    .header-wrapper {
+        font-size: 20px;
+    }
+
+    .header-title {
+        margin: 5px;
+    }
+}
