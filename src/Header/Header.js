@@ -3,7 +3,7 @@ import './Header.css';
 import './media__header.css';
 
 const Header = () => {
-    return(
+    return (
         <div className='header-wrapper'>
             <div className='header-title'>My Pj</div>
             <a href='#' className='logout'>Logout &#10144;</a>

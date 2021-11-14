@@ -3,7 +3,7 @@ import './Home.css';
 import './media__home.css';
 
 const Home = () => {
-    return(
+    return (
         <div>
             <div className='title'>
            Home

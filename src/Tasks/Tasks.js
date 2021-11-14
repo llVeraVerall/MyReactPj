@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Tasks = () => {
-    return(
+    return (
         <div>
             <div className='title'>
                 Task
