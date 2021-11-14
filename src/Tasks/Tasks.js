@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
 const Tasks = () => {
-    return(
+    return (
         <div>
             <div className='title'>
                 Task
@@ -9,7 +9,7 @@ const Tasks = () => {
             <div className='block'>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default Tasks
+export default Tasks;

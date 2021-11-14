@@ -1,14 +1,14 @@
-import React from "react";
-import './Header.css'
-import './media__header.css'
+import React from 'react';
+import './Header.css';
+import './media__header.css';
 
-    const Header = () => {
-        return(
-            <div className='header-wrapper'>
-                <div className='header-title'>My Pj</div>
+const Header = () => {
+    return (
+        <div className='header-wrapper'>
+            <div className='header-title'>My Pj</div>
             <a href='#' className='logout'>Logout &#10144;</a>
-            </div>
-        )
-    }
+        </div>
+    );
+};
 
 export default Header;

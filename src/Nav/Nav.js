@@ -1,9 +1,9 @@
-import React, {useState} from "react";
-import {Routes, Route, Link } from 'react-router-dom'
-import './Nav.css'
-import './media__nav.css'
-import Home from "../Home/Home";
-import Tasks from "../Tasks/Tasks";
+import React, {useState} from 'react';
+import {Routes, Route, Link } from 'react-router-dom';
+import './Nav.css';
+import './media__nav.css';
+import Home from '../Home/Home';
+import Tasks from '../Tasks/Tasks';
 
 const Nav = () => {
     const [isOpened, setIsOpened] = useState(false);
@@ -11,11 +11,11 @@ const Nav = () => {
         <div className="menu">
             <nav role="navigation">
                 <div className="menuToggle">
-                    <button onClick={() => setIsOpened(!isOpened)} className="nav__button">
+                    <button onClick={() => {return setIsOpened(!isOpened);}} className="nav__button">
                         <input type="checkbox" />
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
                     </button>
                     { isOpened &&
                         <ul className="menu">
@@ -38,8 +38,8 @@ const Nav = () => {
                 </div>
             </nav>
         </div>
-    )
-}
+    );
+};
 
 
 export default Nav;
