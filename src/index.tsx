@@ -4,18 +4,24 @@ import {BrowserRouter} from 'react-router-dom';
 import './index.css';
 import App from './App';
 import {Provider} from 'react-redux';
-import Store from './store';
+import rootReducer from './store/reducers';
+import {createStore} from 'redux';
 
-const StoreInstance = Store();
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+const store = createStore(rootReducer,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
+
 
 ReactDOM.render(
     <React.StrictMode>
-        <Provider store={StoreInstance}>
-            <App/>
+        <BrowserRouter>
+            <Provider store={store}>
+                <App/>
+            </Provider>,
         </BrowserRouter>
-    </Provider>,
-</React.StrictMode>,
-document.getElementById('root')
+    </React.StrictMode>,
+    document.getElementById('root')
 );
 
 
