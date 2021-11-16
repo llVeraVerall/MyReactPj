@@ -91,4 +91,8 @@ div.menuToggle{
     transform: none;
 }
 .nav__button{
+    width: 33px;
+    height: 9px;
+    background-color: cornflowerblue;
+
 }
