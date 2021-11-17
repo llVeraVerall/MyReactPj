@@ -4,7 +4,8 @@ import './Nav.css';
 import './media__nav.css';
 import Home from '../Home/Home';
 import Tasks from '../Tasks/Tasks';
-import {CrossIcon} from './CrossIcon/CrossIcon';
+import { CrossIcon } from './CrossIcon';
+
 
 const Nav = () => {
     const [isOpened, setIsOpened] = useState(false);

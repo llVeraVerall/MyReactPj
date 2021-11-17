@@ -5,9 +5,7 @@ import {useSelector} from 'react-redux';
 
 
 const Home = () => {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    const token = useSelector((state) => state.token);
+    const token = useSelector((state:any) => state.token);
     return (
         <div>
             <div className='title'>

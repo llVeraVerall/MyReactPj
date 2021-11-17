@@ -5,13 +5,21 @@ import './index.css';
 import App from './App';
 import {Provider} from 'react-redux';
 import rootReducer from './store/reducers';
-import {createStore} from 'redux';
+import {createStore, compose} from 'redux';
+
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-const store = createStore(rootReducer,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
 
+declare global {
+    interface Window {
+        __REDUX_DEVTOOLS_EXTENSION__?: typeof compose;
+    }
+}
+
+const store = createStore(
+    rootReducer,
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 ReactDOM.render(
     <React.StrictMode>
