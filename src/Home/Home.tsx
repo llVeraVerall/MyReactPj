@@ -5,11 +5,12 @@ import {useSelector} from 'react-redux';
 
 
 const Home = () => {
-    const token = useSelector((state:any) => state.token);
+    const token = useSelector((state:any) => state.token.token);
     return (
         <div>
             <div className='title'>
-                {token}
+                {/*{token}*/}
+                Home
             </div>
             <div className='block'>
                 <div className='days'><h4>Days</h4>

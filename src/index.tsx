@@ -26,7 +26,7 @@ ReactDOM.render(
         <BrowserRouter>
             <Provider store={store}>
                 <App/>
-            </Provider>,
+            </Provider>
         </BrowserRouter>
     </React.StrictMode>,
     document.getElementById('root')

@@ -1,60 +1,80 @@
-div.menuToggle{
-    width: 100px;
-}
-.menuToggle {
-    display: block;
-    position: relative;
-    top: 10px;
-    left: 30px;
-    z-index: 1;
-    -webkit-user-select: none;
-    user-select: none;
-}
-.menuToggle a {
-    text-decoration: none;
-    color: #232323;
-    transition: color 0.3s ease;
-}
-.menuToggle a:hover {
-    color: cornsilk;
-    text-shadow: 5px 0 5px #cdcdcd;
-}
+/*div.menuToggle{*/
+/*    width: 100px;*/
+/*}*/
+/*.menuToggle {*/
+/*    display: block;*/
+/*    position: relative;*/
+/*    top: 10px;*/
+/*    left: 30px;*/
+/*    z-index: 1;*/
+/*    -webkit-user-select: none;*/
+/*    user-select: none;*/
+/*}*/
+/*.menuToggle a {*/
+/*    text-decoration: none;*/
+/*    color: #232323;*/
+/*    transition: color 0.3s ease;*/
+/*}*/
+/*.menuToggle a:hover {*/
+/*    color: cornsilk;*/
+/*    text-shadow: 5px 0 5px #cdcdcd;*/
+/*}*/
 
-.menuToggle input {
-    display: block;
-    width: 40px;
-    height: 32px;
-    position: absolute;
-    top: -7px;
-    left: -5px;
-    cursor: pointer;
-    opacity: 0;
-    z-index: 2;
-    -webkit-touch-callout: none;
-}
+/*.menuToggle input {*/
+/*    display: block;*/
+/*    width: 40px;*/
+/*    height: 32px;*/
+/*    position: absolute;*/
+/*    top: -7px;*/
+/*    left: -5px;*/
+/*    cursor: pointer;*/
+/*    opacity: 0;*/
+/*    z-index: 2;*/
+/*    -webkit-touch-callout: none;*/
+/*}*/
 
-.menu {
-    position: absolute;
+/*.menu {*/
+/*    position: absolute;*/
+/*    width: 100px;*/
+/*    margin: -37px 0 0 -50px;*/
+/*    padding: 50px;*/
+/*    background: #ededed;*/
+/*    list-style-type: none;*/
+/*    -webkit-font-smoothing: antialiased;*/
+/*    transform-origin: 0% 0%;*/
+/*    !*transform: translate(-100%, 0);*!*/
+/*    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);*/
+/*}*/
+/*.menu li {*/
+/*    padding: 10px 0;*/
+/*    font-size: 22px;*/
+/*}*/
+/*.menuToggle input:checked ~ ul {*/
+/*    transform: none;*/
+/*}*/
+/*.nav__button{*/
+/*    width: 33px;*/
+/*    height: 9px;*/
+/*    background-color: cornflowerblue;*/
+
+/*}*/
+
+.menu{
     width: 100px;
-    margin: -37px 0 0 -50px;
+    margin: -18px 0 0 -30px;
     padding: 50px;
-    background: #ededed;
+    background-color: cornsilk;
+}
+li{
+    color: #B22222;
     list-style-type: none;
-    -webkit-font-smoothing: antialiased;
-    transform-origin: 0% 0%;
-    transform: translate(-100%, 0);
-    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+    margin-bottom: 10px;
+    cursor: pointer;
 }
-.menu li {
-    padding: 10px 0;
-    font-size: 22px;
-}
-.menuToggle input:checked ~ ul {
-    transform: none;
-}
-.nav__button{
-    width: 33px;
-    height: 9px;
-    background-color: cornflowerblue;
 
+a{
+    color: #B22222;
+    font-size: 20px;
+    text-decoration: none;
 }
+

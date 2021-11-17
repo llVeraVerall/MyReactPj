@@ -6,11 +6,15 @@
     font-size: 50px;
 }
 .block{
-    width: 90%;
+    width: 40%;
     height: 80px;
     background-color: cornsilk;
-    margin: 30px;
+    /*margin:50px ;*/
+    margin-left: 30%;
+    margin-top: 20px;
+
     display: flex;
+    justify-content: center;
     color: #B22222;
 }
 .days{
