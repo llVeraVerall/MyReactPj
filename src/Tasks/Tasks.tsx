@@ -5,8 +5,6 @@ const Tasks = () => (
         <div className='title'>
             Task
         </div>
-        <div className='block'>
-        </div>
     </div>
 );
 

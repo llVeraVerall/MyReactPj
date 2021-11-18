@@ -10,7 +10,7 @@ const Home = () => {
         <div>
             <div className='title'>
                 {/*{token}*/}
-                Home
+                <div className='title_header'>Home</div>
             </div>
             <div className='block'>
                 <div className='days'><h4>Days</h4>

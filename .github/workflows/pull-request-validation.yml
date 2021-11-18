@@ -1,5 +1,8 @@
 name: Pull Request Validation
-on: [pull_request]
+on:
+  push:
+  pull_request:
+
 jobs:
   Pull-Request-Validation:
     runs-on: ubuntu-latest

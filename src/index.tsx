@@ -8,8 +8,6 @@ import rootReducer from './store/reducers';
 import {createStore, compose} from 'redux';
 
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-
 declare global {
     interface Window {
         __REDUX_DEVTOOLS_EXTENSION__?: typeof compose;
