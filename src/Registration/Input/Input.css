@@ -1,0 +1,9 @@
+.input__item{
+    width: 150px;
+    height: 30px;
+    margin: 5px;
+    outline:none;
+    border-bottom: 1px solid slategray !important;
+    border: 1px solid cornsilk;
+    background-color: cornsilk;
+}
