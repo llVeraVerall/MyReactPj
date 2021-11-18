@@ -1,12 +1,16 @@
 import React from 'react';
 import './Home.css';
 import './media__home.css';
+import {useSelector} from 'react-redux';
+
 
 const Home = () => {
+    const token = useSelector((state:any) => state.token.token);
     return (
         <div>
             <div className='title'>
-           Home
+                {/*{token}*/}
+                <div className='title_header'>Home</div>
             </div>
             <div className='block'>
                 <div className='days'><h4>Days</h4>

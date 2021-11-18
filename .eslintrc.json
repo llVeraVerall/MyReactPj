@@ -40,7 +40,7 @@
             "always"
         ],
         "arrow-body-style": [
-            "error", "always"
+            "error", "as-needed"
         ]
     }
 }

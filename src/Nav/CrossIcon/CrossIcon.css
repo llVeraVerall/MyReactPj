@@ -1,0 +1,33 @@
+.CrossIcon .line-1 {
+    width: 33px;
+    height: 9px;
+   background-color: cornflowerblue;
+}
+
+.CrossIcon .line-2 {
+    width: 33px;
+    height: 9px;
+    background-color: cornflowerblue;
+}
+
+.CrossIcon .line-3 {
+    width: 33px;
+    height: 9px;
+    background-color: cornflowerblue;
+}
+
+.CrossIcon.isOpened .line-1 {
+    top: 0;
+    transform: rotate(0);
+}
+
+.CrossIcon.isOpened .line-2 {
+    transform: rotate(45deg);
+}
+
+.CrossIcon.isOpened .line-3 {
+    top: 0;
+    transform: rotate(90deg);
+}
+
+

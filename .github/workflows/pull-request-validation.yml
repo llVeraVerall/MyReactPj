@@ -1,0 +1,19 @@
+name: Pull Request Validation
+on:
+  push:
+  pull_request:
+
+jobs:
+  Pull-Request-Validation:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+      - name: Installing deps
+        run: yarn install --frozen-lockfile
+      - name: Linting
+        run: yarn run lint
+      - name: Check types
+        run: yarn run compile
