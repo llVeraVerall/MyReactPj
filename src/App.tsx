@@ -7,6 +7,9 @@ import {useDispatch} from 'react-redux';
 import Registration from './Registration/Registration';
 
 
+
+
+
 function App() {
     const dispatch = useDispatch();
 

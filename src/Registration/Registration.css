@@ -8,12 +8,22 @@
     border-radius: 20px;
     padding: 30px;
     align-self: center;
-    margin-top: 100px;
+    margin: auto;
 }
 
 .reg__btn{
     width: 300px;
     height: 30px;
     display: flex;
+    justify-content: space-around;
     margin: 20px;
+}
+
+.reg__btn button{
+    background-color: #b81212;
+    border: #b81212;
+    border-radius: 10px;
+    color: cornsilk;
+    cursor: pointer;
+    padding: 6px;
 }
