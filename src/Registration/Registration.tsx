@@ -2,6 +2,8 @@ import React, {useState, useCallback} from 'react';
 import InputArea from './Input/Input';
 import './Registration.css';
 import './media__reg.css';
+import { Link } from 'react-router-dom';
+import SignIn from '../SignIn/SignIn';
 
 const Registration = () => {
     const [email, setEmail] = useState('');
@@ -24,6 +26,7 @@ const Registration = () => {
                     })
                 })
                 .then(() => {
+                    alert('Подтвердите регистрацию. Перейдите по ссылке, высланной на почту.');
                     console.log('successfull');
                 })
                 .catch((err: string) => {
@@ -35,13 +38,13 @@ const Registration = () => {
     return (
         <div>
             <div className='reg__block'>
-                <div className='reg__title'>Вход</div>
+                <div className='reg__title'>Регистрация</div>
                 <InputArea value={email} setValue={setEmail} type="text" placeholder="Email"/>
                 <InputArea value={password1} setValue={setPassword1} type="password" placeholder="Пароль"/>
                 <InputArea value={password2} setValue={setPassword2} type="password" placeholder=" Повторите пароль"/>
                 <div className='reg__btn'>
                     <button onClick={ signUp }>Зарегестрироваться</button>
-                    <button >Уже есть аккаунт</button>
+                    <button><Link path='/signin'>Уже есть аккаунт</Link></button>
                 </div>
             </div>
         </div>

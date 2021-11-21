@@ -1,7 +1,6 @@
 name: Pull Request Validation
 on:
   push:
-  pull_request:
 
 jobs:
   Pull-Request-Validation:
@@ -17,3 +16,6 @@ jobs:
         run: yarn run lint
       - name: Check types
         run: yarn run compile
+      - uses: actions/setup-node@v2
+          with:
+            node-version: '14.17.0'

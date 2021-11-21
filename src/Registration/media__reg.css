@@ -1,0 +1,20 @@
+@media(max-width: 320px) {
+    *{
+        margin: 0;
+    }
+    .reg__block{
+        width: auto;
+        font-size: 30px;
+    }
+
+}
+
+@media(max-width: 420px) {
+    *{
+        margin: 0;
+    }
+    .reg__block{
+        width: auto;
+        margin-top: 30%;
+    }
+}
