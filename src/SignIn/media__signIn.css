@@ -1,0 +1,21 @@
+@media(max-width: 320px) {
+    .signin{
+        width: auto;
+    }
+}
+
+@media(max-width: 420px) {
+    *{
+        margin: 0;
+    }
+    .signin{
+        width: auto;
+    }
+}
+
+@media(max-width: 1050px) {
+    .signin{
+        width: 500px;
+        font-size: 30px;
+    }
+}

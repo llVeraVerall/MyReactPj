@@ -20,11 +20,10 @@ function App() {
     dispatch(addToken('some-token'));
     return (
         <div className="App">
-            {/*<Header/>*/}
-            {/*<Nav/>*/}
-            <Registration />
+            <Header />
+            <Nav />
             <Routes>
-                <Route path='/home' element={<Home />} />
+                <Route path='/' element={<Home />} />
                 <Route path='/tasks' element={<Tasks />}/>
                 <Route path='/signup' element={<Registration />}></Route>
                 <Route path='/signin' element={ <SignIn /> }></Route>

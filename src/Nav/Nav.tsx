@@ -1,16 +1,18 @@
-import React, {useState} from 'react';
-import {Routes, Route, Link } from 'react-router-dom';
+import React, {useEffect, useState} from 'react';
+import {Routes, Route, Link, useLocation} from 'react-router-dom';
 import './Nav.css';
 import './media__nav.css';
-import Home from '../Home/Home';
-import Tasks from '../Tasks/Tasks';
 import { CrossIcon } from './CrossIcon';
-import Registration from '../Registration/Registration';
-import SignIn from '../SignIn/SignIn';
-
 
 const Nav = () => {
     const [isOpened, setIsOpened] = useState(false);
+
+    const location = useLocation();
+
+    useEffect(() => {
+        setIsOpened(false);
+    }, [location]);
+    
     return (
         <div>
             <button onClick={() =>  setIsOpened(!isOpened)} className="nav__button">
@@ -21,7 +23,7 @@ const Nav = () => {
                     <div className="menuToggle">
                         { isOpened &&
                             <ul className="menu">
-                                <li><Link to="/home">Home</Link></li>
+                                <li><Link to="/">Home</Link></li>
                                 <li><Link to="/tasks">Tasks</Link></li>
                                 <a href="#">
                                     <li>Info</li>
@@ -29,14 +31,10 @@ const Nav = () => {
                                 <a href="#">
                                     <li>Commits</li>
                                 </a>
+                                <li><Link to="/signup">Sign Up</Link></li>
+                                <li><Link to="/signin">Sign In</Link></li>
                             </ul>
                         }
-                        <Routes>
-                            <Route path='/home' element={<Home />} />
-                            <Route path='/tasks' element={<Tasks />}/>
-                            <Route path='/signup' element={<Registration />}></Route>
-                            <Route path='/signin' element={ <SignIn /> }></Route>
-                        </Routes>
                     </div>
                 </nav>
             </div>

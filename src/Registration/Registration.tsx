@@ -39,12 +39,18 @@ const Registration = () => {
 
     return (
         <div>
-            <div className='reg__header'>MyPj</div>
             <div className='reg__block'>
                 <div className='reg__title'>Регистрация</div>
                 <InputArea value={email} setValue={setEmail} type="text" placeholder="Email"/>
                 <InputArea value={password1} setValue={setPassword1} type="password" placeholder="Пароль"/>
                 <InputArea value={password2} setValue={setPassword2} type="password" placeholder=" Повторите пароль"/>
+                {error && (
+                    <div className='reg__error'>{error}</div>
+                )}
+                {message && (
+                    <div className='reg__message'>{message}</div>
+                )}
+
                 <div className='reg__btn'>
                     <button onClick={ signUp }>Зарегестрироваться</button>
                     <button><Link to='/signin'>Уже есть аккаунт</Link></button>
