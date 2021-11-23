@@ -10,10 +10,6 @@ import Home from './Home/Home';
 import Tasks from './Tasks/Tasks';
 import SignIn from './SignIn/SignIn';
 
-
-
-
-
 function App() {
     const dispatch = useDispatch();
 
@@ -25,8 +21,8 @@ function App() {
             <Routes>
                 <Route path='/' element={<Home />} />
                 <Route path='/tasks' element={<Tasks />}/>
-                <Route path='/signup' element={<Registration />}></Route>
-                <Route path='/signin' element={ <SignIn /> }></Route>
+                <Route path='/signup' element={<Registration/>}/>
+                <Route path='/signin' element={<SignIn/>}/>
             </Routes>
         </div>
     );

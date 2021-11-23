@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Routes, Route, Link, useLocation} from 'react-router-dom';
+import { Link, useLocation} from 'react-router-dom';
 import './Nav.css';
 import './media__nav.css';
 import { CrossIcon } from './CrossIcon';

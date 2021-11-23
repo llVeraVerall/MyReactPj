@@ -10,11 +10,12 @@ const Registration = () => {
     const [password1, setPassword1] = useState('');
     const [password2, setPassword2] = useState('');
     const [error, setError] = useState('');
+    const [message, setMessage] = useState('');
 
     const signUp = useCallback(
         () => {
             if(password1 !== password2) {
-                setError('Ошибка');
+                setError('Пароли не совпадают');
                 return;
             }
             fetch('https://ruprogrammer.ru/api/users/register',
@@ -27,15 +28,14 @@ const Registration = () => {
                 })
                 .then(() => {
                     setMessage('Подтвердите регистрацию. Перейдите по ссылке, высланной на почту.');
+                    setError('');
                 })
                 .catch((err: string) => {
-                    setError('');
+                    setError(err);
+                    setMessage('');
                 });
         }, [email, password1, password2]
     );
-
-    const [message, setMessage] = useState('');
-
 
     return (
         <div>
