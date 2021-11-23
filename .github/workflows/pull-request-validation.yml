@@ -1,7 +1,6 @@
 name: Pull Request Validation
 on:
   push:
-  pull_request:
 
 jobs:
   Pull-Request-Validation:
@@ -10,10 +9,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Setup Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2
+        with:
+            node-version: '14.17.0'
       - name: Installing deps
         run: yarn install --frozen-lockfile
       - name: Linting
         run: yarn run lint
       - name: Check types
         run: yarn run compile
+

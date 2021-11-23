@@ -1,0 +1,44 @@
+.reg__block{
+    color: #B22222;
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    align-items: center;
+    background-color: cornsilk;
+    border-radius: 20px;
+    padding: 30px;
+    align-self: center;
+    margin: auto;
+}
+
+.reg__btn{
+    width: 300px;
+    height: 30px;
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+}
+
+.reg__btn button{
+    background-color: #b81212;
+    border: #b81212;
+    border-radius: 10px;
+    color: cornsilk;
+    cursor: pointer;
+    padding: 6px;
+}
+.reg__btn a{
+    text-decoration: none;
+    color: cornsilk;
+}
+
+.reg__message{
+    border: #b81212 1px solid;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+
+.reg__error{
+    background-color: #B22222;
+}

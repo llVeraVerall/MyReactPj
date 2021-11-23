@@ -17,3 +17,10 @@
         margin: 5px;
     }
 }
+
+@media(max-width: 1050px) {
+    .header-wrapper {
+        height: 70px;
+        font-size: 50px;
+    }
+}
