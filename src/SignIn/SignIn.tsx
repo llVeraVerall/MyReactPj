@@ -5,7 +5,6 @@ import './media__signIn.css';
 import {useDispatch} from 'react-redux';
 import {addToken} from '../store/actions/token';
 
-
 const SignIn = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -15,8 +14,9 @@ const SignIn = () => {
 
     const signin = useCallback(
         () => {
-            if (email !== /[a-zA-Z0-9]+[/\\/g.]?([a-zA-Z0-9]+)?[/\\@/][a-z]{3,9}[/\\/g.][a-z]{2,5}/g) {
-                setError('Email введен не верно');
+            if (!/.+@.+\..+/.test(email)) {
+                setError('Email введен некорректно');
+                setMessage('');
                 return;
             }
             fetch('https://ruprogrammer.ru/api/users/login', {
