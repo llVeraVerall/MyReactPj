@@ -3,16 +3,17 @@ import InputArea from '../../components/Input/Input';
 import './Registration.css';
 import './media__reg.css';
 import { Link } from 'react-router-dom';
-import FetchReg from '../../api/fetch__reg';
-import useApi from '../../hooks/ErrorReg';
+import { fetchReg } from '../../api/fetchReg';
+import { useApi } from '../../hooks/useApi';
 
 
 const Registration = () => {
     const [email, setEmail] = useState('');
     const [password1, setPassword1] = useState('');
     const [password2, setPassword2] = useState('');
-    const [error, setError] = useState('');
-    const [message, setMessage] = useState('');
+    const [callFetch, message, error, setError] = useApi(
+        (email: string, password: string) => fetchReg(email, password),
+        'Подтвердите регистрацию. Перейдите по ссылке, высланной на почту.');
 
     const signUp = useCallback(
         () => {
@@ -20,19 +21,11 @@ const Registration = () => {
                 setError('Пароли не совпадают');
                 return;
             }
-            FetchReg(email, password1)
-                .then(() => {
-                    setMessage('Подтвердите регистрацию. Перейдите по ссылке, высланной на почту.');
-                    setError('');
-                })
-                .catch((err: string) => {
-                    setError(err);
-                    setMessage('');
-                });
+            callFetch(email, password1);
+
         }, [email, password1, password2]
     );
 
-    const [callFetch, message, error] = useApi(() => fetchReg(email, password1));
 
     return (
         <div>

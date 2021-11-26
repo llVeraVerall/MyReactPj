@@ -2,39 +2,24 @@ import React, {useCallback, useState} from 'react';
 import InputArea from '../../components/Input/Input';
 import './SignIn.css';
 import './media__signIn.css';
-import {useDispatch} from 'react-redux';
-import {addToken} from '../../store/actions/token';
+import {errorSignIn} from '../../hooks/errorSignIn';
+import {fetchSignin} from '../../api/fetchSignIn';
 
 const SignIn = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [error, setError] = useState('');
-    const [message, setMessage] = useState('');
-    const dispatch = useDispatch();
+    const [callFetch, message, error, setError] = errorSignIn(
+        (email: string, password: string) => fetchSignin (email, password),
+        '');
 
     const signin = useCallback(
         () => {
             if (!/.+@.+\..+/.test(email)) {
                 setError('Email введен некорректно');
-                setMessage('');
                 return;
             }
-            fetch('https://ruprogrammer.ru/api/users/login', {
-                method: 'POST',
-                body: JSON.stringify({
-                    Email: email,
-                    Password: password
-                })
-            })
-                .then(() => {
-                    setError('');
-                    dispatch(addToken('some-token'));
-                    window.location.href = '/';
-                })
-                .catch((err: string) => {
-                    setError(err);
-                    setMessage('');
-                });
+            callFetch(email, password);
+
         }, [email, password]
     );
 

@@ -1,11 +1,11 @@
 import {useState} from 'react';
 
 
-const useApi = (apiMethod: () => Promise<unknown>, successMessage: string) => {
+export const useApi = (apiMethod: (...args: string[]) => Promise<unknown>, successMessage: string) => {
     const [error, setError] = useState('');
     const [message, setMessage] = useState('');
 
-    const call = () => apiMethod()
+    const call = (...args: string[]) => apiMethod(...args)
         .then(() => {
             setMessage(successMessage);
             setError('');
@@ -15,5 +15,6 @@ const useApi = (apiMethod: () => Promise<unknown>, successMessage: string) => {
             setMessage('');
         });
 
-    return [call, message, error];
+    return [call, message, error, setError] as const;
 };
+
