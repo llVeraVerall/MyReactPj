@@ -1,14 +1,14 @@
 import React from 'react';
 import './App.css';
-import Header from './Header/Header';
-import Nav from './Nav/Nav';
+import Header from './components/Header/Header';
+import Nav from './pages/Nav/Nav';
 import {addToken} from './store/actions/token';
 import {useDispatch} from 'react-redux';
-import Registration from './Registration/Registration';
+import Registration from './pages/Registration/Registration';
 import {Route, Routes} from 'react-router-dom';
-import Home from './Home/Home';
-import Tasks from './Tasks/Tasks';
-import SignIn from './SignIn/SignIn';
+import Home from './pages/Home/Home';
+import Tasks from './pages/Tasks/Tasks';
+import SignIn from './pages/SignIn/SignIn';
 
 function App() {
     const dispatch = useDispatch();

@@ -1,8 +1,10 @@
-import React, {useState, useCallback} from 'react';
-import InputArea from './Input/Input';
+import React, { useState, useCallback } from 'react';
+import InputArea from '../../components/Input/Input';
 import './Registration.css';
 import './media__reg.css';
 import { Link } from 'react-router-dom';
+import FetchReg from '../../api/fetch__reg';
+import useApi from '../../hooks/ErrorReg';
 
 
 const Registration = () => {
@@ -14,18 +16,11 @@ const Registration = () => {
 
     const signUp = useCallback(
         () => {
-            if(password1 !== password2) {
+            if (password1 !== password2) {
                 setError('Пароли не совпадают');
                 return;
             }
-            fetch('https://ruprogrammer.ru/api/users/register',
-                {
-                    method: 'POST',
-                    body: JSON.stringify({
-                        Email: email,
-                        Password: password1
-                    })
-                })
+            FetchReg(email, password1)
                 .then(() => {
                     setMessage('Подтвердите регистрацию. Перейдите по ссылке, высланной на почту.');
                     setError('');
@@ -37,13 +32,15 @@ const Registration = () => {
         }, [email, password1, password2]
     );
 
+    const [callFetch, message, error] = useApi(() => fetchReg(email, password1));
+
     return (
         <div>
             <div className='reg__block'>
                 <div className='reg__title'>Регистрация</div>
-                <InputArea value={email} setValue={setEmail} type="text" placeholder="Email"/>
-                <InputArea value={password1} setValue={setPassword1} type="password" placeholder="Пароль"/>
-                <InputArea value={password2} setValue={setPassword2} type="password" placeholder=" Повторите пароль"/>
+                <InputArea value={email} setValue={setEmail} type="text" placeholder="Email" />
+                <InputArea value={password1} setValue={setPassword1} type="password" placeholder="Пароль" />
+                <InputArea value={password2} setValue={setPassword2} type="password" placeholder=" Повторите пароль" />
                 {error && (
                     <div className='reg__error'>{error}</div>
                 )}
@@ -52,7 +49,7 @@ const Registration = () => {
                 )}
 
                 <div className='reg__btn'>
-                    <button onClick={ signUp }>Зарегестрироваться</button>
+                    <button onClick={signUp}>Зарегестрироваться</button>
                     <button><Link to='/signin'>Уже есть аккаунт</Link></button>
                 </div>
             </div>

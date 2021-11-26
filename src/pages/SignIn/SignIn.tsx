@@ -1,9 +1,9 @@
 import React, {useCallback, useState} from 'react';
-import InputArea from '../Registration/Input/Input';
+import InputArea from '../../components/Input/Input';
 import './SignIn.css';
 import './media__signIn.css';
 import {useDispatch} from 'react-redux';
-import {addToken} from '../store/actions/token';
+import {addToken} from '../../store/actions/token';
 
 const SignIn = () => {
     const [email, setEmail] = useState('');
