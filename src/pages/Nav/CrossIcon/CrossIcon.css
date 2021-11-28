@@ -1,18 +1,21 @@
 .CrossIcon .line-1 {
     width: 33px;
     height: 9px;
+    display: block;
    background-color: cornflowerblue;
 }
 
 .CrossIcon .line-2 {
     width: 33px;
     height: 9px;
+    display: block;
     background-color: cornflowerblue;
 }
 
 .CrossIcon .line-3 {
     width: 33px;
     height: 9px;
+    display: block;
     background-color: cornflowerblue;
 }
 

@@ -2,13 +2,16 @@ import React, {useCallback, useState} from 'react';
 import InputArea from '../../components/Input/Input';
 import './SignIn.css';
 import './media__signIn.css';
-import {errorSignIn} from '../../hooks/errorSignIn';
 import {fetchSignin} from '../../api/fetchSignIn';
+import {useApi} from '../../hooks/useApi';
+import {addToken} from '../../store/actions/token';
+import {useDispatch} from 'react-redux';
 
 const SignIn = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [callFetch, message, error, setError] = errorSignIn(
+    const dispatch = useDispatch();
+    const [callFetch, message, error, setError] = useApi<Response>(
         (email: string, password: string) => fetchSignin (email, password),
         '');
 
@@ -18,7 +21,15 @@ const SignIn = () => {
                 setError('Email введен некорректно');
                 return;
             }
-            callFetch(email, password);
+            callFetch(email, password)
+                .then((result) => result.json())
+                .then(({ token }: {token: string}) =>{
+                    dispatch(addToken(token));
+                    //сохраненеие токена localStorage
+                    localStorage.setItem('token', token);
+                    window.location.href = '/';
+                }
+                );
 
         }, [email, password]
     );

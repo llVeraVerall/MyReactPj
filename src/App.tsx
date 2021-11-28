@@ -12,8 +12,11 @@ import SignIn from './pages/SignIn/SignIn';
 
 function App() {
     const dispatch = useDispatch();
-
-    dispatch(addToken('some-token'));
+    const token = localStorage.getItem('token');
+    if (token) {
+        dispatch(
+            addToken(token));
+    }
     return (
         <div className="App">
             <Header />

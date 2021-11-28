@@ -3,6 +3,7 @@ import { Link, useLocation} from 'react-router-dom';
 import './Nav.css';
 import './media__nav.css';
 import { CrossIcon } from './CrossIcon';
+import './CrossIcon/CrossIcon.css';
 
 const Nav = () => {
     const [isOpened, setIsOpened] = useState(false);
