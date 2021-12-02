@@ -1,12 +1,20 @@
 import React from 'react';
+import {fetchList} from '../../api/fetchList';
 
-const Tasks = () => (
-    <div>
-        <div className='title'>
-            Task
+
+
+const Tasks = () => {
+    fetchList()
+        .then()
+
+    return (
+        <div>
+            <div className='title'>
+                Task
+            </div>
         </div>
-    </div>
-);
+    );
+};
 
 
 export default Tasks;
