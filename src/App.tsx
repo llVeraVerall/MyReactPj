@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './App.css';
 import Header from './components/Header/Header';
 import Nav from './pages/Nav/Nav';
@@ -12,11 +12,13 @@ import SignIn from './pages/SignIn/SignIn';
 
 function App() {
     const dispatch = useDispatch();
-    const token = localStorage.getItem('token');
-    if (token) {
-        dispatch(
-            addToken(token));
-    }
+    useEffect(() =>{
+        const token = localStorage.getItem('token');
+        if (token) {
+            dispatch(
+                addToken(token));
+        }
+    });
     return (
         <div className="App">
             <Header />
