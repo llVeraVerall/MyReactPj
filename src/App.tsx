@@ -18,7 +18,7 @@ function App() {
             dispatch(
                 addToken(token));
         }
-    });
+    }, []);
     return (
         <div className="App">
             <Header />

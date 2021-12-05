@@ -2,7 +2,8 @@ export const fetchAddId1 = ( id: number ) => fetch('https://ruprogrammer.ru/api/
     {
         method: 'POST',
         body: JSON.stringify({
-            Name: 'Первый элемент'
+            Name: 'Первый элемент',
+            ID: id
         })
     }
 );

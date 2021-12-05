@@ -6,6 +6,7 @@ import {fetchSignin} from '../../api/fetchSignIn';
 import {useApi} from '../../hooks/useApi';
 import {addToken} from '../../store/actions/token';
 import {useDispatch} from 'react-redux';
+import {validateEmail} from '../../validators/validateEmail';
 
 const SignIn = () => {
     const [email, setEmail] = useState('');
@@ -17,7 +18,7 @@ const SignIn = () => {
 
     const signin = useCallback(
         () => {
-            if (!/.+@.+\..+/.test(email)) {
+            if (!validateEmail(email)) {
                 setError('Email введен некорректно');
                 return;
             }

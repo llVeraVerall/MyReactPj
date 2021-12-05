@@ -5,6 +5,7 @@ import './media__reg.css';
 import { Link } from 'react-router-dom';
 import { fetchReg } from '../../api/fetchReg';
 import { useApi } from '../../hooks/useApi';
+import {validateEmail} from '../../validators/validateEmail';
 
 
 const Registration = () => {
@@ -17,6 +18,10 @@ const Registration = () => {
 
     const signUp = useCallback(
         () => {
+            if (!validateEmail(email)) {
+                setError('Email введен некорректно');
+                return;
+            }
             if (password1 !== password2) {
                 setError('Пароли не совпадают');
                 return;
