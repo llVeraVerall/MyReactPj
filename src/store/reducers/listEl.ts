@@ -3,7 +3,7 @@ export interface IItem {
     id: number;
 }
 
-interface IState {
+export interface IState {
     list?: IItem[];
 }
 
@@ -22,13 +22,15 @@ const listEl = (state :IState = {}, action: any,) => {
     case 'DELETE_EL':
         return {
             ...state,
-            list: state.list
+            list: (state.list ?? [])
+                //проходимся по массиву и говорим оставить все элементы, у которых индекс не равен action.payload
                 .filter((item, index) => index !== action.payload)
         };
-    case 'ADD_ID1':
+    case 'ADD_ID':
         return {
             ...state,
-            list: action.payload
+            list: [...state.list ?? [],
+                action.payload]
         };
     case 'ADD_TOKEN':
         return {

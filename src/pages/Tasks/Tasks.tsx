@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import {fetchList} from '../../api/fetchList';
 import {addList} from '../../store/actions/listEl';
 import {useDispatch, useSelector} from 'react-redux';
-import {IItem} from '../../store/reducers/listEl';
+import {IItem, IState} from '../../store/reducers/listEl';
 
 
 const Tasks = () => {
@@ -13,9 +13,7 @@ const Tasks = () => {
             .then((result) => result.json())
             .then((list) => dispatch(addList(list)));
     }, []);
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    const list = useSelector((state) => state.listEl.list ?? []);
+    const list = useSelector((state: IState) => state.list ?? []);
     return (
         <div>
             <div className='title'>
