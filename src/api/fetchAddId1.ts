@@ -1,4 +1,4 @@
-export const fetchAddId1 = ( id: number ) => fetch('https://ruprogrammer.ru/api/RestfullTest/',
+export const fetchAddId1 = (id: number) => fetch('https://ruprogrammer.ru/api/RestfullTest/',
     {
         method: 'POST',
         body: JSON.stringify({
