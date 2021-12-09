@@ -4,9 +4,9 @@ import './SignIn.css';
 import './media__signIn.css';
 import {fetchSignin} from '../../api/fetchSignIn';
 import {useApi} from '../../hooks/useApi';
-import {addToken} from '../../store/actions/token';
 import {useDispatch} from 'react-redux';
 import {validateEmail} from '../../validators/validateEmail';
+import {addToken} from '../../store/token';
 
 const SignIn = () => {
     const [email, setEmail] = useState('');

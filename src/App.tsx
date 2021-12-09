@@ -2,13 +2,13 @@ import React, {useEffect} from 'react';
 import './App.css';
 import Header from './components/Header/Header';
 import Nav from './pages/Nav/Nav';
-import {addToken} from './store/actions/token';
 import {useDispatch} from 'react-redux';
 import Registration from './pages/Registration/Registration';
 import {Route, Routes} from 'react-router-dom';
 import Home from './pages/Home/Home';
 import Tasks from './pages/Tasks/Tasks';
 import SignIn from './pages/SignIn/SignIn';
+import {addToken} from './store/token';
 
 function App() {
     const dispatch = useDispatch();
