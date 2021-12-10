@@ -1,8 +1,13 @@
 import {combineReducers} from 'redux';
-import listEl from './listEl';
+import listEl, {IStateList} from './listEl';
+import tokenR, {IStateToken} from './token';
 
+export interface IState {
+    tokenR: IStateToken;
+    listEl: IStateList;
+}
 
 const rootReducer = combineReducers({
-    listEl
+    listEl, tokenR
 });
 export default rootReducer;

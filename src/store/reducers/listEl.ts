@@ -5,12 +5,11 @@ export interface IItem {
     id: number;
 }
 
-export interface IState {
+export interface IStateList {
     list?: IItem[];
-    token?: string;
 }
 
-const listEl = (state: IState = {}, action:AllActions) => {
+const listEl = (state: IStateList = {}, action:AllActions) => {
     switch (action.type) {
     case 'ADD_LIST':
         return {

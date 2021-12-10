@@ -1,12 +1,15 @@
-import {addToken} from '../../store/token';
-import {useDispatch} from 'react-redux';
+import {addToken} from '../../store/actions/token';
+import {store} from '../../index';
 
-const dispatch = useDispatch();
 
 export const handleAuthError = (respons: Response) => {
     if(respons.status == 401) {
-        dispatch(addToken(''));
-        localStorage.removeItem('token', token);
-        window.location.href = '/signin';
+        logOut();
     }
+};
+
+export const logOut = () => {
+    store.dispatch(addToken(''));
+    localStorage.removeItem('token');
+    window.location.href = '/signin';
 };

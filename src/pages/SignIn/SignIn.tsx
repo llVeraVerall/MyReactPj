@@ -6,7 +6,7 @@ import {fetchSignin} from '../../api/fetchSignIn';
 import {useApi} from '../../hooks/useApi';
 import {useDispatch} from 'react-redux';
 import {validateEmail} from '../../validators/validateEmail';
-import {addToken} from '../../store/token';
+import {addToken} from '../../store/actions/token';
 
 const SignIn = () => {
     const [email, setEmail] = useState('');

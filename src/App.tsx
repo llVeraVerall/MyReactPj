@@ -8,7 +8,7 @@ import {Route, Routes} from 'react-router-dom';
 import Home from './pages/Home/Home';
 import Tasks from './pages/Tasks/Tasks';
 import SignIn from './pages/SignIn/SignIn';
-import {addToken} from './store/token';
+import {addToken} from './store/actions/token';
 
 function App() {
     const dispatch = useDispatch();

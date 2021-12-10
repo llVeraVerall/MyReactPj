@@ -1,4 +1,4 @@
-import {IAddTokenAction} from './actions/types';
+import {IAddTokenAction} from './types';
 
 export const addToken = (token: string): IAddTokenAction => ({
     type: 'ADD_TOKEN',

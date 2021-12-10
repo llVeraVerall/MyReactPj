@@ -18,7 +18,7 @@ export interface IAddIdAction extends IAction<number> {
     type: 'ADD_ID';
 }
 
-export interface IDeleteElementAction extends IAction<string> {
+export interface IDeleteElementAction extends IAction<number> {
     type: 'DELETE_EL';
 }
 
