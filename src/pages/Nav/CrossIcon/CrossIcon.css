@@ -1,0 +1,40 @@
+.CrossIcon .line-1 {
+    width: 33px;
+    height: 3px;
+    display: block;
+    margin-bottom: 3px;
+   background-color: #B22222;
+}
+
+.CrossIcon .line-2 {
+    width: 33px;
+    height: 3px;
+    display: block;
+    margin-bottom: 3px;
+    background-color: #B22222;
+}
+
+.CrossIcon .line-3 {
+    width: 33px;
+    height: 3px;
+    display: block;
+    background-color: #B22222;
+}
+
+.CrossIcon.isOpened .line-1 {
+    top: 15px;
+    transform: rotate(50deg);
+    transition: 0.55s 0.5s;
+}
+
+.CrossIcon.isOpened .line-2 {
+    opacity: 0;
+}
+
+.CrossIcon.isOpened .line-3 {
+    transform: rotate(-410deg);
+    transition: 0.55s 0.5s;
+    margin-top: -12px;
+}
+
+

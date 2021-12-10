@@ -20,3 +20,16 @@
     padding: 6px;
     margin-top: 20px;
 }
+.reg__message{
+    border: #b81212 1px solid;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.reg__error{
+    color: #B22222;
+    background-color: cornsilk;
+    border: #b81212 1px solid;
+    padding: 10px;
+    margin-top: 10px;
+}

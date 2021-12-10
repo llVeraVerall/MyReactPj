@@ -1,19 +1,24 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './App.css';
-import Header from './Header/Header';
-import Nav from './Nav/Nav';
-import {addToken} from './store/actions/token';
+import Header from './components/Header/Header';
+import Nav from './pages/Nav/Nav';
 import {useDispatch} from 'react-redux';
-import Registration from './Registration/Registration';
+import Registration from './pages/Registration/Registration';
 import {Route, Routes} from 'react-router-dom';
-import Home from './Home/Home';
-import Tasks from './Tasks/Tasks';
-import SignIn from './SignIn/SignIn';
+import Home from './pages/Home/Home';
+import Tasks from './pages/Tasks/Tasks';
+import SignIn from './pages/SignIn/SignIn';
+import {addToken} from './store/actions/token';
 
 function App() {
     const dispatch = useDispatch();
-
-    dispatch(addToken('some-token'));
+    useEffect(() =>{
+        const token = localStorage.getItem('token');
+        if (token) {
+            dispatch(
+                addToken(token));
+        }
+    }, []);
     return (
         <div className="App">
             <Header />
